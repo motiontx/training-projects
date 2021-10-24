@@ -1,4 +1,4 @@
-import Link from "next//link";
+import Link from "next/link";
 import { Heading, Button } from "@chakra-ui/react";
 import Container from "../component/Container";
 
@@ -11,7 +11,7 @@ const ErrorPage = () => {
       <Heading size="xs" mb={6}>
         Looks like we lost this page.
       </Heading>
-      <Link href="/">
+      <Link href="/" passHref>
         <Button colorScheme="pink">Go back to home</Button>
       </Link>
     </Container>
