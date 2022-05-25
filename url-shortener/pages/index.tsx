@@ -80,7 +80,7 @@ const HomePage = () => {
                 name="url"
                 type="url"
                 variant="filled"
-                placeholder="https://example.com/[extremely-long-url]"
+                placeholder="https://example.com"
                 mb={3}
               />
             </FormControl>
