@@ -1,0 +1,15 @@
+export const cssProperties = {
+  "font size": "font-size",
+  margin: "margin",
+  "margin top": "margin-top",
+  "margin bottom": "margin-bottom",
+  "margin left": "margin-left",
+  "margin right": "margin-right",
+  padding: "padding",
+  "padding top": "padding-top",
+  "padding bottom": "padding-bottom",
+  "padding left": "padding-left",
+  "padding right": "padding-right",
+  height: "height",
+  width: "width",
+};
