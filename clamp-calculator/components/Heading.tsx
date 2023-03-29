@@ -25,6 +25,7 @@ export const Heading = () => {
 
   return (
     <ChakraHeading
+      as="h1"
       fontSize={["5xl", "5xl", "7xl", "7xl"]}
       marginBottom={12}
       sx={{
