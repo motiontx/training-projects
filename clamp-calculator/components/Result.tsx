@@ -3,11 +3,12 @@ import {
   Text,
   HStack,
   VStack,
-  Code,
+  Box,
   Badge,
   useToast,
   useClipboard,
   useBoolean,
+  useColorMode,
 } from "@chakra-ui/react";
 
 export const Result = ({
@@ -17,6 +18,7 @@ export const Result = ({
   clampProperty: { label: string; value: string } | null;
   error: string | null;
 }) => {
+  const { colorMode } = useColorMode();
   const [copyOnlyProp, setCopyOnlyProp] = useBoolean(false);
 
   const toast = useToast({
@@ -45,14 +47,16 @@ export const Result = ({
 
   return (
     <VStack fontWeight="bold" whiteSpace="nowrap" maxW="100%">
-      <Code
+      <Box
         cursor={error ? "unset" : "pointer"}
         borderRadius="md"
         overflow="hidden"
         padding={6}
         w="100%"
         pos="relative"
-        variant="outline"
+        fontFamily="mono"
+        borderColor={colorMode === "light" ? "blue.500" : "blue.200"}
+        borderWidth={1}
         onClick={() => copyToClipboardFunction()}
         sx={{
           "> .chakra-badge": {
@@ -71,8 +75,10 @@ export const Result = ({
         {!error ? (
           <>
             <HStack w="100%" fontSize={["small", "small", "large", "large"]}>
-              <Text>{clampProperty?.label}:</Text>
-              <Code
+              <Text color={colorMode === "light" ? "blue.500" : "blue.100"}>
+                {clampProperty?.label}:
+              </Text>
+              <Box
                 onMouseEnter={(e) => {
                   e.preventDefault();
                   setCopyOnlyProp.on();
@@ -89,6 +95,8 @@ export const Result = ({
                 fontSize={["small", "small", "large", "large"]}
                 position="relative"
                 zIndex={1}
+                bg={colorMode === "light" ? "blue.100" : "gray.700"}
+                color={colorMode === "light" ? "blue.800" : "blue.100"}
               >
                 <Text textOverflow="ellipsis" overflow="hidden">
                   {clampProperty?.value}
@@ -103,7 +111,7 @@ export const Result = ({
                 >
                   Copy to clipboard
                 </Badge>
-              </Code>
+              </Box>
             </HStack>
             <Badge
               variant="outline"
@@ -116,21 +124,22 @@ export const Result = ({
             </Badge>
           </>
         ) : (
-          <Code
+          <Box
             borderRadius="md"
             padding={6}
             fontWeight="bold"
             overflow="hidden"
             fontSize={["small", "small", "large", "large"]}
             display="flex"
-            colorScheme="red"
+            bg={colorMode === "light" ? "red.100" : "gray.700"}
+            color={colorMode === "light" ? "red.800" : "red.100"}
           >
             <Text textOverflow="ellipsis" overflow="hidden">
               {error}
             </Text>
-          </Code>
+          </Box>
         )}
-      </Code>
+      </Box>
     </VStack>
   );
 };

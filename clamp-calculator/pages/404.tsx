@@ -1,37 +1,58 @@
-import { VStack, Text, Code, Badge } from "@chakra-ui/react";
+import { VStack, Badge, Box, useColorMode } from "@chakra-ui/react";
 import Link from "next/link";
 
 const ErrorPage = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <VStack maxW="100%">
-      <Link href="/" passHref>
-        <Code
+      <Link href="/" passHref legacyBehavior>
+        <Box
           as="a"
           position="relative"
-          borderRadius="md"
-          padding={8}
+          display="flex"
+          borderRadius="lg"
+          padding={[8, 8, 8, 10]}
           w="100%"
-          variant="outline"
           overflow="hidden"
+          borderColor={colorMode === "light" ? "blue.500" : "blue.200"}
+          borderWidth={1}
         >
-          <Code
-            borderRadius="md"
-            padding={6}
+          <Box
+            borderRadius="lg"
+            padding={[2, 3, 4, 6]}
             fontWeight="bold"
+            fontFamily="mono"
             fontSize={["small", "small", "large", "large"]}
             display="flex"
+            textOverflow="ellipsis"
+            overflow="hidden"
+            bg={colorMode === "light" ? "blue.100" : "gray.700"}
+            color={colorMode === "light" ? "blue.800" : "blue.100"}
           >
-            <Text textOverflow="ellipsis" overflow="hidden">
-              Oops. Looks like we lost this page.
-            </Text>
-          </Code>
-          <Badge variant="outline" pos="absolute" left={0} top={0}>
+            Oops. Looks like we lost this page.
+          </Box>
+          <Badge
+            variant="outline"
+            pos="absolute"
+            px={2}
+            py={1}
+            left={-0.5}
+            top={-0.5}
+          >
             404
           </Badge>
-          <Badge variant="outline" pos="absolute" right={0} bottom={0}>
+          <Badge
+            variant="outline"
+            pos="absolute"
+            px={2}
+            py={1}
+            right={-0.5}
+            bottom={-0.5}
+          >
             Return to Home →
           </Badge>
-        </Code>
+        </Box>
       </Link>
     </VStack>
   );
