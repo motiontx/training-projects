@@ -36,7 +36,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
-      <ModalOverlay />
+      <ModalOverlay bg={colorMode === "light" ? "gray.100" : "gray.900"} />
       <ModalContent mx={2}>
         <ModalCloseButton />
         <ModalBody>

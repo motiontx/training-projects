@@ -5,15 +5,26 @@ import {
   HStack,
   Tooltip,
   useColorMode,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, InfoIcon } from "@chakra-ui/icons";
 import { Meta } from "../components/Meta";
 import { About } from "../components/About";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-export default function BaseLayout({ children }: { children: ReactNode }) {
+export default function BaseLayout({
+  children,
+  aboutOpen = false,
+}: {
+  children: ReactNode;
+  aboutOpen?: boolean;
+}) {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter();
+
+  const handleAboutClose = () => {
+    router.push("/", undefined, { shallow: true });
+  };
 
   return (
     <>
@@ -47,18 +58,16 @@ export default function BaseLayout({ children }: { children: ReactNode }) {
             </Button>
           </Tooltip>
           <Tooltip label="About this tool">
-            <Button
-              variant="ghost"
-              onClick={onOpen}
-              aria-label="About this tool"
-            >
-              <InfoIcon />
-            </Button>
+            <Link href="/about" passHref legacyBehavior>
+              <Button as="a" variant="ghost" aria-label="About this tool">
+                <InfoIcon />
+              </Button>
+            </Link>
           </Tooltip>
         </HStack>
         {children}
       </Container>
-      <About isOpen={isOpen} onClose={onClose} />
+      <About isOpen={aboutOpen} onClose={handleAboutClose} />
     </>
   );
 }
