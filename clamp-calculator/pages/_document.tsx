@@ -6,7 +6,14 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icon.png"></link>
+          <link rel="apple-touch-icon" href="/icon.png" />
+          <link
+            as="font"
+            crossOrigin="anonymous"
+            href="/fonts/lobstertwo-bold-webfont.woff2"
+            type="font/woff2"
+            rel="preload"
+          ></link>
           <meta name="theme-color" content="#fff" />
         </Head>
         <body>
