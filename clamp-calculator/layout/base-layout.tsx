@@ -15,9 +15,11 @@ import Link from "next/link";
 export default function BaseLayout({
   children,
   aboutOpen = false,
+  page,
 }: {
   children: ReactNode;
   aboutOpen?: boolean;
+  page?: string;
 }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const router = useRouter();
@@ -28,10 +30,7 @@ export default function BaseLayout({
 
   return (
     <>
-      <Meta
-        title="Clamp Calculator"
-        description="Automatically calculates the optimal preferred value for your CSS size to match your design."
-      />
+      <Meta page={page} />
       <Container
         as="main"
         maxWidth={768}

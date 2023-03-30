@@ -40,7 +40,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
       <ModalContent mx={2}>
         <ModalCloseButton />
         <ModalBody>
-          <Heading as="h2" size="xl" my={6}>
+          <Heading as="h1" size="xl" my={6}>
             What is the CSS{" "}
             <Box
               as="span"
@@ -269,7 +269,7 @@ const Section = ({
   title: string;
 }) => (
   <AccordionItem>
-    <Heading as="h3">
+    <Heading as="h2">
       <AccordionButton px={2}>
         <Box as="span" flex="1" textAlign="left">
           {title}
