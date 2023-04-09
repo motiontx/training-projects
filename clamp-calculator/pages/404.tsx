@@ -15,7 +15,7 @@ const ErrorPage = () => {
           padding={[8, 8, 8, 10]}
           w="100%"
           overflow="hidden"
-          borderColor={colorMode === "light" ? "blue.500" : "blue.200"}
+          borderColor={colorMode === "light" ? "primary.500" : "primary.200"}
           borderWidth={1}
         >
           <Box
@@ -27,8 +27,8 @@ const ErrorPage = () => {
             display="flex"
             textOverflow="ellipsis"
             overflow="hidden"
-            bg={colorMode === "light" ? "blue.100" : "gray.700"}
-            color={colorMode === "light" ? "blue.800" : "blue.100"}
+            bg={colorMode === "light" ? "primary.100" : "gray.700"}
+            color={colorMode === "light" ? "primary.800" : "primary.100"}
           >
             Oops. Looks like we lost this page.
           </Box>

@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     <>
       <Heading />
       <Settings setClampProperty={setClampProperty} setError={setError} />
-      <Divider marginBottom={8} />
+      <Divider mb="8" />
       <Result clampProperty={clampProperty} error={error} />
     </>
   );

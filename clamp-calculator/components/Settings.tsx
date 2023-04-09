@@ -84,7 +84,7 @@ export const Settings = ({
 
   return (
     <>
-      <HStack marginBottom={12}>
+      <HStack mb={12}>
         <VStack
           spacing={4}
           textAlign="center"
@@ -133,7 +133,7 @@ export const Settings = ({
       </HStack>
 
       <VStack
-        marginBottom={8}
+        mb={8}
         spacing={4}
         textAlign="center"
         fontSize={["small", "small", "large", "large"]}

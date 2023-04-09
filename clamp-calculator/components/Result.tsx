@@ -55,7 +55,7 @@ export const Result = ({
         w="100%"
         pos="relative"
         fontFamily="mono"
-        borderColor={colorMode === "light" ? "blue.500" : "blue.200"}
+        borderColor={colorMode === "light" ? "primary.500" : "primary.200"}
         borderWidth={1}
         onClick={() => copyToClipboardFunction()}
         sx={{
@@ -75,7 +75,7 @@ export const Result = ({
         {!error ? (
           <>
             <HStack w="100%" fontSize={["small", "small", "large", "large"]}>
-              <Text color={colorMode === "light" ? "blue.500" : "blue.100"}>
+              <Text color={colorMode === "light" ? "primary.500" : "primary.100"}>
                 {clampProperty?.label}:
               </Text>
               <Box
@@ -95,8 +95,8 @@ export const Result = ({
                 fontSize={["small", "small", "large", "large"]}
                 position="relative"
                 zIndex={1}
-                bg={colorMode === "light" ? "blue.100" : "gray.700"}
-                color={colorMode === "light" ? "blue.800" : "blue.100"}
+                bg={colorMode === "light" ? "primary.100" : "gray.700"}
+                color={colorMode === "light" ? "primary.800" : "primary.100"}
               >
                 <Text textOverflow="ellipsis" overflow="hidden">
                   {clampProperty?.value}

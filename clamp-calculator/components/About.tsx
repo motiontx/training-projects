@@ -44,7 +44,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
             What is the CSS{" "}
             <Box
               as="span"
-              color={colorMode === "light" ? "blue.900" : "blue.100"}
+              color={colorMode === "light" ? "primary.900" : "primary.100"}
             >
               clamp()
             </Box>{" "}
@@ -67,7 +67,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
                   <ListItem>
                     <ListIcon
                       as={CheckCircleIcon}
-                      color={colorMode === "light" ? "blue.900" : "blue.100"}
+                      color={colorMode === "light" ? "primary.900" : "primary.100"}
                     />
                     The <b>minimum</b> is the smallest value that the function
                     will return.
@@ -75,7 +75,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
                   <ListItem>
                     <ListIcon
                       as={CheckCircleIcon}
-                      color={colorMode === "light" ? "blue.900" : "blue.100"}
+                      color={colorMode === "light" ? "primary.900" : "primary.100"}
                     />
                     The <b>preferred</b> is the value that the function will
                     return if it falls within the specified range.
@@ -83,7 +83,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
                   <ListItem>
                     <ListIcon
                       as={CheckCircleIcon}
-                      color={colorMode === "light" ? "blue.900" : "blue.100"}
+                      color={colorMode === "light" ? "primary.900" : "primary.100"}
                     />
                     The <b>maximum</b> is the largest value that the function
                     will return.
@@ -145,7 +145,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
           <Divider mt={6} />
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button colorScheme="primary" mr={3} onClick={onClose}>
             Got it!
           </Button>
         </ModalFooter>
@@ -176,7 +176,7 @@ const Code = ({ children }: { children: string }) => {
     <Box>
       <ChakraText
         bg={highlightColor[colorMode].bg}
-        color="blue.50"
+        color="primary.50"
         px={2}
         py={2}
         roundedTop="md"
@@ -195,7 +195,7 @@ const Code = ({ children }: { children: string }) => {
         py="1"
         roundedBottom="md"
         bg="gray.900"
-        color="blue.50"
+        color="primary.50"
         fontSize="md"
         w="full"
         fontWeight="bold"
@@ -211,12 +211,12 @@ const Highlight = ({ children }: { children: string }) => {
 
   const highlightColor = {
     light: {
-      bg: "blue.100",
-      color: "blue.800",
+      bg: "primary.100",
+      color: "primary.800",
     },
     dark: {
-      bg: "blue.700",
-      color: "blue.50",
+      bg: "primary.700",
+      color: "primary.50",
     },
   };
 
@@ -241,10 +241,10 @@ const Link = ({ children, href }: { children: ReactNode; href: string }) => {
 
   const highlightColor = {
     light: {
-      color: "blue.800",
+      color: "primary.800",
     },
     dark: {
-      color: "blue.50",
+      color: "primary.50",
     },
   };
 

@@ -13,7 +13,7 @@ class MyDocument extends Document {
             href="/fonts/lobstertwo-bold-webfont.woff2"
             type="font/woff2"
             rel="preload"
-          ></link>
+          />
           <meta name="theme-color" content="#fff" />
         </Head>
         <body>

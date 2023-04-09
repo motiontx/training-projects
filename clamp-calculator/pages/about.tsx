@@ -7,7 +7,11 @@ const About: NextPage = () => {
 
 // @ts-ignore
 About.getLayout = (page) => {
-  return <BaseLayout aboutOpen page="About">{page}</BaseLayout>;
+  return (
+    <BaseLayout aboutOpen page="About">
+      {page}
+    </BaseLayout>
+  );
 };
 
 export const getStaticProps = async () => {

@@ -59,7 +59,7 @@ export const theme = extendTheme(
     },
     colors: {
       primary: {
-        ...baseTheme.colors.teal,
+        ...baseTheme.colors.blue,
       },
     },
     components: {
