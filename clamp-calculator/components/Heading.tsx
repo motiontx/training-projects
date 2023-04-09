@@ -54,7 +54,7 @@ export const Heading = () => {
       </ChakraHeading>
 
       <Alert mb={10} size="sm" variant="top-accent" w="fit-content" colorScheme="primary">
-        <AlertDescription fontSize="sm" px="12">
+        <AlertDescription fontSize="sm" px="12" textAlign="center">
           Automatically calculates the optimal clamp() function!
         </AlertDescription>
       </Alert>
