@@ -166,7 +166,7 @@ export const Settings = ({
             }}
             min={0}
             max={99999}
-            precision={2}
+            precision={3}
           />
           <Text>rem to</Text>
           <NumberInput
@@ -178,7 +178,7 @@ export const Settings = ({
             }}
             min={0}
             max={99999}
-            precision={2}
+            precision={3}
           />
           <Text>rem</Text>
         </HStack>
