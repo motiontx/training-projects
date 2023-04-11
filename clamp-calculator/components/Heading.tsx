@@ -3,7 +3,6 @@ import {
   AlertDescription,
   Heading as ChakraHeading,
   Text,
-  theme,
   useColorMode,
 } from "@chakra-ui/react";
 import { useMemo } from "react";
@@ -53,9 +52,17 @@ export const Heading = () => {
         </Text>
       </ChakraHeading>
 
-      <Alert mb={10} size="sm" variant="top-accent" w="fit-content" colorScheme="primary">
+      <Alert
+        mb={10}
+        size="sm"
+        variant="top-accent"
+        w="fit-content"
+        colorScheme="primary"
+      >
         <AlertDescription fontSize="sm" px="12" textAlign="center">
-          Automatically calculates the optimal clamp() function!
+          <ChakraHeading as="h2" fontSize="sm" fontWeight="normal" fontFamily="Inter">
+            Automatically calculates the optimal clamp() function!
+          </ChakraHeading>
         </AlertDescription>
       </Alert>
     </>

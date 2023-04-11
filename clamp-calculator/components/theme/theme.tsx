@@ -55,7 +55,7 @@ export const theme = extendTheme(
   {
     fonts: {
       heading: "Lobster Bold, sans-serif",
-      body: "sans-serif",
+      body: "Inter, sans-serif",
     },
     colors: {
       primary: {
