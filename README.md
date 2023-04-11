@@ -4,7 +4,7 @@ Welcome to my training project repository! Here you'll find a collection of proj
 
 ## Projects
 
-- ### 🔩 Clamp Calculator
+- ### 📐 Clamp Calculator
   Automatically calculates the optimal clamp() function!
   
   **Stack**: Next.js, Typescript, ChackraUI
