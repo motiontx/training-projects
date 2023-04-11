@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+const fonts = ["/fonts/lobster.woff2", "/fonts/inter.woff2"];
+
 class MyDocument extends Document {
   render() {
     return (
@@ -7,13 +9,16 @@ class MyDocument extends Document {
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png" />
-          <link
-            as="font"
-            crossOrigin="anonymous"
-            href="/fonts/lobstertwo-bold-webfont.woff2"
-            type="font/woff2"
-            rel="preload"
-          />
+          {fonts.map((font) => (
+            <link
+              key={font}
+              as="font"
+              crossOrigin="anonymous"
+              href={font}
+              type="font/woff2"
+              rel="preload"
+            />
+          ))}
           <meta name="theme-color" content="#fff" />
         </Head>
         <body>
