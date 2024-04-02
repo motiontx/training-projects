@@ -27,8 +27,9 @@ export const Heading = () => {
     <>
       <ChakraHeading
         as="h1"
-        fontSize={["5xl", "5xl", "7xl", "7xl"]}
+        fontSize={["4xl", "6xl", "7xl", "7xl"]}
         mb={12}
+        textAlign="center"
         sx={{
           position: "relative",
           _after: {
@@ -60,7 +61,12 @@ export const Heading = () => {
         colorScheme="primary"
       >
         <AlertDescription fontSize="sm" px="12" textAlign="center">
-          <ChakraHeading as="h2" fontSize="sm" fontWeight="normal" fontFamily="Inter">
+          <ChakraHeading
+            as="h2"
+            fontSize="sm"
+            fontWeight="normal"
+            fontFamily="Inter"
+          >
             Automatically calculates the optimal clamp() function!
           </ChakraHeading>
         </AlertDescription>

@@ -140,7 +140,7 @@ export const About = ({ isOpen, onClose }: AboutProps) => {
             </Section>
           </Accordion>
           <ChakraText textAlign="center" mt={6}>
-            Made with ❤️ by <Link href="https://vittoretrivi.dev/">me</Link>
+            Made with ❤️ by <Link href="https://www.vittoretrivi.dev/">me</Link>
           </ChakraText>
           <Divider mt={6} />
         </ModalBody>
