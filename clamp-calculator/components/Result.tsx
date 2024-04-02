@@ -32,7 +32,7 @@ export const Result = ({
   const clampValue = useMemo(() => {
     return `${!copyOnlyProp ? clampProperty?.label + ": " : ""}${
       clampProperty?.value
-    }`;
+    }${!copyOnlyProp ? ";" : ""}`;
   }, [clampProperty, copyOnlyProp]);
 
   const { onCopy: copyProperty } = useClipboard(clampValue);
@@ -75,7 +75,9 @@ export const Result = ({
         {!error ? (
           <>
             <HStack w="100%" fontSize={["small", "small", "large", "large"]}>
-              <Text color={colorMode === "light" ? "primary.500" : "primary.100"}>
+              <Text
+                color={colorMode === "light" ? "primary.500" : "primary.100"}
+              >
                 {clampProperty?.label}:
               </Text>
               <Box

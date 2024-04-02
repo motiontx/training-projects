@@ -40,12 +40,8 @@ export const Settings = ({
         condition: minViewport === maxViewport,
         message: "Min viewport cannot be equal to max viewport",
       },
-      {
-        condition: minValue > maxValue,
-        message: "Min value cannot be greater than max value",
-      },
     ];
-  }, [minViewport, maxViewport, pixelsPerRem, minValue, maxValue]);
+  }, [minViewport, maxViewport, pixelsPerRem]);
 
   useEffect(() => {
     for (const error of errors) {
@@ -59,17 +55,23 @@ export const Settings = ({
 
     const minWidth = minViewport / pixelsPerRem;
     const maxWidth = maxViewport / pixelsPerRem;
-    const slope = (maxValue - minValue) / (maxWidth - minWidth);
-    const yAxisIntersection = -minWidth * slope + minValue;
+    const fromBiggestToLowest = minValue > maxValue;
 
-    const value = `clamp(${minValue}rem, ${yAxisIntersection.toFixed(
-      4
-    )}rem + ${(slope * 100).toFixed(4)}vw, ${maxValue}rem);`;
+    const max = fromBiggestToLowest ? minValue : maxValue;
+    const min = fromBiggestToLowest ? maxValue : minValue;
 
-    setClampProperty({
-      label: cssProperty,
-      value,
-    });
+    const slope = (max - min) / (maxWidth - minWidth);
+    const yAxisIntersection = -minWidth * slope + min;
+
+    let value = `clamp(${min}rem, ${yAxisIntersection.toFixed(4)}rem + ${(
+      slope * 100
+    ).toFixed(4)}vw, ${max}rem)`;
+
+    if (fromBiggestToLowest) {
+      value = `calc(${min + max}rem - ${value})`;
+    }
+
+    setClampProperty({ label: cssProperty, value });
   }, [
     minViewport,
     maxViewport,
