@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en">
     <body
-      className={cn("min-h-screen font-sans antialiased", GeistSans.variable)}
+      className={cn("min-h-dvh font-sans antialiased", GeistSans.variable)}
     >
       <main>{children}</main>
       <Toaster />
