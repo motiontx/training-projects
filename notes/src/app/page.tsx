@@ -17,7 +17,7 @@ const Home = () => {
   );
 
   return (
-    <main className="h-screen flex flex-col p-2 sm:p-8">
+    <main className="h-dvh flex flex-col p-2 sm:p-8">
       <Image
         alt=""
         src="/images/bg.jpg"
